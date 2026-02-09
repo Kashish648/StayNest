@@ -7,18 +7,18 @@ The project integrates Node.js, Express, MongoDB, React, and EJS to showcase mod
 
 This project focuses on building scalable backend systems and seamless frontend experiences, strengthening full-stack engineering skills through a practical, real-world application.
 
-Key Features
+#Key Features
 
-Dynamic property listings
+1.Dynamic property listings
 
-CRUD operations for properties
+2.CRUD operations for properties
 
-MongoDB database integration
+3.MongoDB database integration
 
-RESTful API architecture
+4.RESTful API architecture
 
-Server-side rendering with EJS
+5.Server-side rendering with EJS
 
-React-based interactive UI
+6.React-based interactive UI
 
-Responsive design
+7.Responsive design
