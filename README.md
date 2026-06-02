@@ -1,6 +1,4 @@
-<img width="1919" height="640" alt="Screenshot 2026-06-02 114325" src="https://github.com/user-attachments/assets/52dd391c-b000-4d52-bd75-2edef55bcbe1" />
-<img width="1919" height="868" alt="Screenshot 2026-06-02 114247" src="https://github.com/user-attachments/assets/ce89cb21-aaf9-4c7e-abf1-0b0ce8d84410" />
-<img width="1902" height="871" alt="Screenshot 2026-06-02 113849" src="https://github.com/user-attachments/assets/089e5969-5b3a-4037-89da-f51e0c266c69" />
+
 # 🏡 StayNest
 
 > A full-stack Airbnb-style property listing and booking platform built with Node.js, Express, and MongoDB.
@@ -168,14 +166,9 @@ MAP_TOKEN=your_mapbox_public_token
 
 ## 📸 Screenshots
 
-> *(Add screenshots of your app here)*
->
-> Tip: Take screenshots of the listings page, individual listing with map, login page, and create listing form — then upload them to your repo and reference them like:
-> ```md
-> ![Listings Page](./public/screenshots/listings.png)
-> ```
-
----
+<img width="1919" height="640" alt="Screenshot 2026-06-02 114325" src="https://github.com/user-attachments/assets/52dd391c-b000-4d52-bd75-2edef55bcbe1" />
+<img width="1919" height="868" alt="Screenshot 2026-06-02 114247" src="https://github.com/user-attachments/assets/ce89cb21-aaf9-4c7e-abf1-0b0ce8d84410" />
+<img width="1902" height="871" alt="Screenshot 2026-06-02 113849" src="https://github.com/user-attachments/assets/089e5969-5b3a-4037-89da-f51e0c266c69" />
 
 ## 🔮 Future Improvements
 
