@@ -130,3 +130,79 @@ opacity:0;
     width:80vh;
 
     }
+
+    /* =========================
+   AI STAY FINDER
+   ========================= */
+
+.ai-stay-finder {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    background: #fff;
+}
+
+.ai-title h3 {
+    margin-bottom: 0.3rem;
+}
+
+.ai-title p {
+    color: #666;
+    margin-bottom: 1.2rem;
+}
+
+.ai-search-box {
+    display: flex;
+    gap: 0.7rem;
+}
+
+#ai-query {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.7rem;
+    outline: none;
+}
+
+#ai-query:focus {
+    border-color: #222;
+}
+
+#ai-search-btn {
+    border: none;
+    background: #222;
+    color: white;
+    padding: 0.8rem 1.3rem;
+    border-radius: 0.7rem;
+    cursor: pointer;
+}
+
+#ai-search-btn:hover {
+    opacity: 0.9;
+}
+
+.ai-error {
+    color: #d9534f;
+    margin-top: 1rem;
+}
+
+.ai-loading {
+    display: none;
+    margin-top: 1rem;
+    color: #666;
+}
+
+#ai-results {
+    margin-top: 1.5rem;
+}
+
+.ai-results-heading {
+    margin-bottom: 1rem;
+}
+
+.ai-card img {
+    height: 20rem;
+    object-fit: cover;
+}
