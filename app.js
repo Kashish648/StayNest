@@ -30,8 +30,8 @@ const userRouter=require("./routes/user.js");
 
 const aiRouter = require("./routes/ai.js");
 
-app.use("/ai",aiRouter);
-app.use(express.json());
+// app.use("/ai",aiRouter);
+// app.use(express.json());
 
 
 // const { default: MongoStore } = require('connect-mongo');
@@ -120,6 +120,15 @@ app.use("/",userRouter);
 
 app.use("/api/ai", aiRouter);
 
+// Serve React AI frontend
+const reactDistPath = path.join(__dirname, "client", "dist");
+
+app.use("/ai", express.static(reactDistPath));
+
+app.get("/ai", (req, res) => {
+    res.sendFile(path.join(reactDistPath, "index.html"));
+});
+
 app.all("*splat",(req,res,next)=>{
     next(new ExpressError(404,"page not found"));
 });
@@ -131,6 +140,11 @@ app.use((err,req,res,next)=>{
     // res.status(statusCode).send(message);
 });
 
-app.listen(8080,()=>{
-    console.log("server is listening to port 8080")
-})
+// app.listen(8080,()=>{ 
+//     console.log("server is listening to port 8080")
+// })
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT,()=>{
+    console.log(`server is listening on port ${PORT}`);
+});
