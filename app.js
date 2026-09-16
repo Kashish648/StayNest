@@ -7,6 +7,10 @@ if(process.env.NODE_ENV!="production"){
 
 const express=require("express");
 const app=express();
+const cors = require("cors");
+app.use(cors());
+app.use(express.json());
+
 const mongoose=require("mongoose");
 const path=require("path");
 const methodOverride=require("method-override");
@@ -17,11 +21,19 @@ const MongoStore=require("connect-mongo").default || require("connect-mongo");
 const flash=require("connect-flash");
 const passport=require("passport");
 const LocalStrategy=require("passport-local");
-const User=require("./models/user.js");
 
+
+const User=require("./models/user.js");
 const listingRouter=require("./routes/listing.js");
 const reviewRouter=require("./routes/review.js");
 const userRouter=require("./routes/user.js");
+
+
+
+// app.use("/ai",aiRouter);
+// app.use(express.json());
+
+
 // const { default: MongoStore } = require('connect-mongo');
 
 
@@ -45,6 +57,7 @@ app.use(express.static("public"));
 app.use(express.static(path.join(__dirname,"public")));
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
+
 
 const store=MongoStore.create({
     mongoUrl:dburl,
@@ -105,6 +118,18 @@ app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
 
+const aiRouter = require("./routes/ai.js");
+app.use("/api/ai", aiRouter);
+
+// Serve React AI frontend
+const reactDistPath = path.join(__dirname, "client", "dist");
+
+app.use("/ai", express.static(reactDistPath));
+
+app.get("/ai", (req, res) => {
+    res.sendFile(path.join(reactDistPath, "index.html"));
+});
+
 app.all("*splat",(req,res,next)=>{
     next(new ExpressError(404,"page not found"));
 });
@@ -116,6 +141,11 @@ app.use((err,req,res,next)=>{
     // res.status(statusCode).send(message);
 });
 
-app.listen(8080,()=>{
-    console.log("server is listening to port 8080")
-})
+// app.listen(8080,()=>{ 
+//     console.log("server is listening to port 8080")
+// })
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT,()=>{
+    console.log(`server is listening on port ${PORT}`);
+});
